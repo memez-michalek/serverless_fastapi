@@ -15,5 +15,6 @@ app.add_middleware(
 @app.get("/api/health_check/")
 async def health_check():
     return {"status": "OK"}
- 
+
+
 handle = Magnum(app)
