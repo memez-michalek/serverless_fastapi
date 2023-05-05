@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from magnum import Magnum
 
 app = FastAPI()
 app.add_middleware(
@@ -14,3 +15,5 @@ app.add_middleware(
 @app.get("/api/health_check/")
 async def health_check():
     return {"status": "OK"}
+ 
+handle = Magnum(app)
