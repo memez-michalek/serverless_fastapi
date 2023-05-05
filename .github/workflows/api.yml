@@ -75,7 +75,7 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
   
   deploy-development:
-    needs: [test, code-quality]
+    needs: [tests, code-quality]
     strategy:
       fail-fast: false
       matrix:
