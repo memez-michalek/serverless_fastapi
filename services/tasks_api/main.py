@@ -10,6 +10,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.get("/api/health_check/")
 async def health_check():
-    return {"status": "OK"} 
+    return {"status": "OK"}
