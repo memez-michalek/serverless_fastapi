@@ -1,5 +1,5 @@
 Resources:
-  TasksAPITable: 
+  TasksAPITable:
     Type: AWS::DynamoDB::Table
     Properties:
       TableName: ${self:custom.tableName}
@@ -11,7 +11,7 @@ Resources:
           AttributeType: S
         - AttributeName: GS1PK
           AttributeType: S
-        - AttributeName: GS1
+        - AttributeName: GS1SK
           AttributeType: S
       KeySchema:
         - AttributeName: PK
