@@ -57,3 +57,4 @@ plugins:
 
 resources:
   - ${file(resources/dynamodb.yml)}  # new
+  - ${file(resources/cognito.yml)}
