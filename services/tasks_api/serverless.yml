@@ -29,6 +29,7 @@ provider:
             - "Fn::GetAtt": [ TasksAPITable, Arn ]
             - "Fn::Join": ['/', ["Fn::GetAtt": [ TasksAPITable, Arn ], 'index', '*']]
 
+
 functions:
   API:
     handler: main.handle
@@ -41,6 +42,13 @@ functions:
           cors:
             origin: ${env:ALLOWED_ORIGINS}
             maxAge: 60
+          authorizer:  # new
+            name: TasksAPIAuthorizer  
+            type: COGNITO_USER_POOLS  
+            arn:  
+              Fn::GetAtt:  
+                - CognitoUserPool  
+                - Arn  
 
 
 custom:
